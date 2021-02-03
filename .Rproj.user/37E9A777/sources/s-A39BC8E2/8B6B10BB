@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1612357352813.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8B6B10BB",
+    "lastKnownWriteTime" : 1612355280,
+    "last_content_update" : 1612355280,
+    "path" : "~/Desktop/Adria/Other/ASBTEC/asbtec_blogdown_hugominimal/themes/minimal/static/css/main.css",
+    "project_path" : "themes/minimal/static/css/main.css",
+    "properties" : {
+        "cursorPosition" : "59,15",
+        "scrollLine" : "48"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "css"
+}

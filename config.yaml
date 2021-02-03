@@ -1,25 +1,25 @@
-baseURL: /
+baseURL: https://asbtec.github.io
 publishDir: docs
-languageCode: en-us
+languageCode: ca
 title: ASBTEC
-profilePic: "/images/logo_mod_circle.png"
 theme: minimal
 disqusShortname: ASBTEC
 googleAnalytics: ''
 params:
+  favicon: "/images/logo_mod_circle.png"  ## favicon in the browser tab
+  profilePic: "/images/logo_mod_circle.png" ## logo in the first page
   accent: orange
-  author: Calin Tataru
+  author: ASBTEC
   backgroundColor: white
   description: Associació de Biotecnòlegs de Catalunya
-  font: Raleway
+  font: Railway
   githubUsername: 'ASBTEC'
   highlight: yes
   highlightLanguages:
-    - go
-    - haskell
-    - kotlin
-    - scala
-    - swift
+    - r
+    - python
+    - markdown
+    - html
   highlightStyle: default
   showBorder: yes
 menu:
