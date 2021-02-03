@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ASBTEC</title>
-    <link>/categories/</link>
+    <link>https://asbtec.github.io/categories/</link>
     <description>Recent content in Categories on ASBTEC</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>ca</language>
+    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://asbtec.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cursos</title>
-      <link>/categories/cursos/</link>
+      <link>https://asbtec.github.io/categories/cursos/</link>
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/cursos/</guid>
+      <guid>https://asbtec.github.io/categories/cursos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ASBTEC</title>
-      <link>/categories/asbtec/</link>
+      <link>https://asbtec.github.io/categories/asbtec/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/asbtec/</guid>
+      <guid>https://asbtec.github.io/categories/asbtec/</guid>
       <description></description>
     </item>
     
