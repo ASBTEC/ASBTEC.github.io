@@ -1,0 +1,59 @@
+baseURL: /
+publishDir: docs
+languageCode: en-us
+title: ASBTEC
+theme: minimal
+disqusShortname: ASBTEC
+googleAnalytics: ''
+params:
+  accent: orange
+  author: Calin Tataru
+  backgroundColor: white
+  description: Associació de Biotecnòlegs de Catalunya
+  font: Raleway
+  githubUsername: 'ASBTEC'
+  highlight: yes
+  highlightLanguages:
+    - go
+    - haskell
+    - kotlin
+    - scala
+    - swift
+  highlightStyle: default
+  showBorder: yes
+menu:
+  icon:
+    - name: fas fa-globe
+      url: https://asbtec.org
+      weight: 1
+    - name: fas fa-at
+      url: mailto:comunicacio@asbtec.org
+      weight: 2
+    - name: fab fa-github
+      url: https://github.com/ASBTEC/
+      weight: 3
+    - name: fab fa-twitter
+      url: https://twitter.com/asbtec/
+      weight: 4
+    - name: fab fa-linkedin
+      url: https://www.linkedin.com/company/ASBTEC/
+      weight: 5
+    - name: fab fa-instagram
+      url: https://www.instagram.com/asbtec/
+      weight: 6
+    - name: fab fa-youtube
+      url: https://www.youtube.com/c/ASBTEC/
+      weight: 7
+  main:
+    - name: Inici
+      url: /
+      weight: 1
+    - name: Quant a
+      url: /about/
+      weight: 2
+    - name: Blog
+      url: /post/
+      weight: 3
+    - name: Cursos
+      url: /project/
+      weight: 4
