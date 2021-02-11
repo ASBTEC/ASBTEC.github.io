@@ -4,51 +4,47 @@
   
   <url>
     <loc>https://asbtec.github.io/project/001-basic_r/</loc>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://asbtec.github.io/tags/asbtec/</loc>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://asbtec.github.io/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://asbtec.github.io/categories/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://asbtec.github.io/post/002-rmarkdown-web/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+    <loc>https://asbtec.github.io/tags/cursos/</loc>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://asbtec.github.io/categories/cursos/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://asbtec.github.io/tags/github/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+    <loc>https://asbtec.github.io/project/</loc>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://asbtec.github.io/post/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://asbtec.github.io/tags/rmarkdown/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+    <loc>https://asbtec.github.io/tags/r/</loc>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://asbtec.github.io/tags/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://asbtec.github.io/tags/web/</loc>
-    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -67,23 +63,12 @@
   </url>
   
   <url>
-    <loc>https://asbtec.github.io/tags/asbtec/</loc>
-  </url>
-  
-  <url>
-    <loc>https://asbtec.github.io/tags/cursos/</loc>
-  </url>
-  
-  <url>
-    <loc>https://asbtec.github.io/project/</loc>
+    <loc>https://asbtec.github.io/post/</loc>
+    <lastmod>2021-01-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://asbtec.github.io/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://asbtec.github.io/tags/r/</loc>
   </url>
   
 </urlset>

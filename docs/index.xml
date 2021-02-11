@@ -6,26 +6,16 @@
     <description>Recent content on ASBTEC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ca</language>
-    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://asbtec.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://asbtec.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inicia&#39;t a R.</title>
       <link>https://asbtec.github.io/project/001-basic_r/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://asbtec.github.io/project/001-basic_r/</guid>
       <description>Objectius del curss Aquest curs, íntegrament en català, ha estat dissenyat per membres de l’ASBTEC per al benefici dels socis de l’associació.
 D’aquesta manera pretenem que els alumnes que el duguin a terme aprenguin a fer servir R des de zero i sense cap coneixement d’informàtica més enllà dels que té l’usuari mig.
 Els coneixements que es volen impartir estan relacionats amb el funcionament bàsic d’R, la transformació i visualització de dades i, per acabar, com utilitzar R per al tractament de dades biològiques.</description>
-    </item>
-    
-    <item>
-      <title>Com fer una pàgina web amb Rmarkdown i GitHub pages</title>
-      <link>https://asbtec.github.io/post/002-rmarkdown-web/</link>
-      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://asbtec.github.io/post/002-rmarkdown-web/</guid>
-      <description>R és un llenguatge de programació/scripting amb el qual es poden fer infinitat de coses: tractament i visualització de dades, anàlisis estadístiques, anàlisis de dades òmiques i altres tipus de dades biològiques (ep, això és interessant per a nosaltres, biotecnòlegs!) i, si ens endinsem a la fusió d’R amb Markdown (Rmarkdown) fins i tot currículums vitae, pàgines web i blogs.
-Doncs avui ens interessa publicar una pàgina web o blog propi mitjançant Rmarkdown i el que s’anomena GitHub pages.</description>
     </item>
     
     <item>

@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 <br><br>
 
 ```{r portada, out.width="100%"}
-knitr::include_graphics("portada.png", error = F)
+knitr::include_graphics("portada_web_rmarkdown.png", error = F)
 ```
 
 <br><br>

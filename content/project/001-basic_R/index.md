@@ -3,6 +3,8 @@ title: Inicia't a R.
 description: Aprèn els conceptes més bàsics del llenguatge estadístic R.
 categories:
 - Cursos
+date: 2021-02-01
+hideDate: yes
 tags:
 - R
 - Cursos
