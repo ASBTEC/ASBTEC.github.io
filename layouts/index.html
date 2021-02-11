@@ -1,0 +1,87 @@
+{{ partial "header" . }}
+
+<!-- home page -->
+
+<main>
+    
+    {{ with .Site.Params.backgroundPic }}
+    <style>
+        body {
+            background-image: url('{{ . }}');
+        }
+    </style>
+    
+    {{ end }}
+        
+        <p style="margin-bottom:.5cm;"> </p>
+        
+        {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}" style="width:125px;height:125px;"> {{ end }}
+        <h1 style="font-size:50px; font-family:{{ .Site.Params.titleFont }}; font-weight:bold"><b>{{ .Site.Title }}</b></h1>
+        <h2 style="color:black; font-size:25px; font-family:{{ .Site.Params.titleFont }}; font-weight:bold">{{ markdownify .Site.Params.Description }}</h2>
+        
+        {{ if .Site.Params.HomeIcons }}
+        
+                <hr style="color:black; background-color:black; border-color:black; height:1px; border-width:1px;">   
+                
+                <!-- buttons in the home page -->
+                
+                <button type="button-home" style="color:black; background-color:transparent;">
+                        <a href="https://asbtec.cat" target = "_blank">
+                                <i class="fas fa-globe" style="color:black; background-color:transparent; font-size:30px"></i>
+                        </a>
+                </button>
+                
+                <button type="button-home" style="color:black; background-color:transparent;">
+                        <a href="mailto:comunicacio@asbtec.cat" target = "_blank">
+                                <i class="fas fa-at" style="color:black; background-color:transparent; font-size:30px"></i>
+                        </a>
+                </button>
+                
+                <button type="button-home" style="color:black; background-color:transparent;">
+                        <a href="https://github.com/ASBTEC" target = "_blank">
+                                <i class="fab fa-github" style="color:black; background-color:transparent; font-size:30px"></i>
+                        </a>
+                </button>
+                
+                <button type="button-home" style="color:black; background-color:transparent;">
+                        <a href="https://twitter.com/asbtec/" target = "_blank">
+                                <i class="fab fa-twitter" style="color:black; background-color:transparent; font-size:30px"></i>
+                        </a>
+                </button>
+                
+                <button type="button-home" style="color:black; background-color:transparent;">
+                        <a href="https://www.linkedin.com/company/ASBTEC/" target = "_blank">
+                                <i class="fab fa-linkedin" style="color:black; background-color:transparent; font-size:30px"></i>
+                        </a>
+                </button>
+                
+                <button type="button-home" style="color:black; background-color:transparent;">
+                        <a href="https://instagram.com/asbtec/" target = "_blank">
+                                <i class="fab fa-instagram" style="color:black; background-color:transparent; font-size:30px"></i>
+                        </a>
+                </button>
+                
+                <button type="button-home" style="color:black; background-color:transparent;">
+                        <a href="https://youtube.com/c/ASBTEC/" target = "_blank">
+                                <i class="fab fa-youtube" style="color:black; background-color:transparent; font-size:30px"></i>
+                        </a>
+                </button>
+                
+        {{ end }}
+    
+        
+        <!-- to list pages, comment the <div> tags and uncomment the following code -->
+            <h2 style="color:black; font-size:20px; font-family:{{ .Site.Params.titleFont }}; font-weight:bold; margin-top:1.5cm;">
+                <ins>Publicacions recents</ins></h2>
+            {{ range (.Paginator 3).Pages }} {{ partial "list-item" . }} {{ end }}
+            
+         
+        {{ with .Content }} <div class="homepage-content text-center">{{ . }}</div> {{ end }}
+        
+        
+        
+        
+</main>
+
+{{ partial "paginator" . }}
+{{ partial "footer" . }}

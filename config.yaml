@@ -6,13 +6,15 @@ theme: minimal
 disqusShortname: ASBTEC
 googleAnalytics: ''
 params:
+  titleFont: Arial
+  homeIcons: yes
   favicon: "/images/logo_mod_circle.png"  ## favicon in the browser tab
   profilePic: "/images/logo_mod_circle.png" ## logo in the first page
   accent: orange
   author: ASBTEC
   backgroundColor: white
   description: Associació de Biotecnòlegs de Catalunya
-  font: Railway
+  font: Raleway
   githubUsername: 'ASBTEC'
   highlight: yes
   highlightLanguages:
@@ -25,7 +27,7 @@ params:
 menu:
   icon:
     - name: fas fa-globe
-      url: https://asbtec.org
+      url: https://asbtec.cat
       weight: 1
     - name: fab fa-github
       url: https://github.com/ASBTEC/
@@ -55,3 +57,6 @@ menu:
     - name: Cursos
       url: /project/
       weight: 4
+    - name: Fes-te soci
+      url: https://asbtec.cat/socis-asbtec/
+      weight: 5

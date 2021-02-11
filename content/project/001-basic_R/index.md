@@ -1,4 +1,5 @@
 ---
+title: Inicia't a R.
 description: Aprèn els conceptes més bàsics del llenguatge estadístic R.
 categories:
 - Cursos
@@ -6,7 +7,6 @@ tags:
 - R
 - Cursos
 - ASBTEC
-title: Inicia't a R.
 weight: 1
 ---
 
@@ -30,6 +30,14 @@ Podeu seguir-lo [aquí](https://asbtec.github.io/Curs_R_basic/).
 
 Acutalment, el curs *Inicia’t a R* de l’Associació de Biotecnòlegs de Catalunya es troba en la primera edició.
 
-* 1a edició [2021]. Responsable(s): [Adrià Mitjavila](amitjavilaventura.github.io)
+* 1a edició [2021]. Responsable(s): [Adrià Mitjavila](htts://amitjavilaventura.github.io)
+
+---
+
+### Avís
+
+Aquest curs està destinat als socis de l'ASBTEC. Així doncs, quan estigui complet, es publicarà en privat per a aquests i aquesta versió quedarà pública, però només seran accessibles els dos primers capítols.
+
+
 
 

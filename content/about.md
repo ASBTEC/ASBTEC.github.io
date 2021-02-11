@@ -1,6 +1,8 @@
 ---
 description: Què és aquesta web?
 title: Quant a
+date: 0001-01-01
+hidedate: yes
 ---
 
 Benvinguts a aquesta pàgina propietat de l’ASBTEC, l’Associació de Biotecnòlegs de Catalunya.
