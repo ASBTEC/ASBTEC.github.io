@@ -1,12 +1,12 @@
----
+--- 
+description: "Aprèn a fer una web i tenir un perfil públic més professional"
 title: "Com fer una pàgina web amb Rmarkdown i GitHub pages"
 categories:
-- Cursos
-date: 2021-01-27
-tags:
 - Web
-- RMarkdown
-- GitHub
+- RMakrdown
+date: 2021-01-27
+output:
+  blogdown::html_page
 ---
 
 ```{r setup, include=FALSE}
