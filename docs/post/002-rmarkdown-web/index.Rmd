@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 <br><br>
 
 ```{r portada, out.width="100%"}
-knitr::include_graphics("portada_web_rmarkdown.png", error = F)
+knitr::include_graphics("/images/portada_web_rmarkdown.png", error = F)
 ```
 
 <br><br>
@@ -102,10 +102,10 @@ Les altres dependències dependran del codi que volguem executar a les nostres p
 ## Pas 2. Crear un projecte d'R
 
 ```{r fig.show="hold", out.height="20%", out.width="49%", fig.align = "default", fig.cap="Figura 1. Passos necessaris per a crear un projecte d'R."}
-knitr::include_graphics(c("newRproject.png", 
-                          "newRproject_directory.png", 
-                          "newRproject_type.png", 
-                          "newRproject_name.png"), error = F)
+knitr::include_graphics(c("/images/newRproject.png", 
+                          "/images/newRproject_directory.png", 
+                          "/images/newRproject_type.png", 
+                          "/images/newRproject_name.png"), error = F)
 ```
 
 Una vegada tinguem les dependències instal·lades (bàsicament el paquet `rmarkdown` o el que desitgem), crearem un projecte d'R seguint els següents passos:
@@ -133,7 +133,7 @@ Per a generar els fitxers HTML que configuraran les pàgines del lloc web podem 
   + Als fitxers *R Markdown*, normalment hi tenim una *capçalera YAML* (al principi del document entre dos blocs de tres guions `---`), amb diverses opcions. En aquest cas només cal indicar el `title`, ja que les opcions com `output`... les indicarem al fitxer `_site.yml`.
 
 ```{r rstudio_screen, fig.show="hold", out.width="100%", fig.align = "default", fig.cap="Figura 2. Pantalla d'RStudio on es mostra el fitxer '_site.yml' de la web de prova a l'editor (panell superior esquerra), la pestanya 'Build' (panell superior dret) i la distribució del directori on tindrem guardat el lloc web (panell inferior dret)."}
-knitr::include_graphics("rstudio_screen.png", error = F)
+knitr::include_graphics("/images/rstudio_screen.png", error = F)
 ```
 
   
@@ -195,9 +195,9 @@ Per a guardar la vostra web, el que haureu de fer és crear un repositori amb el
 També podem crear tots els repositoris que volguem i amb qualsevol nom per allotjar tantes webs com volguem, però aquestes webs s'allotjaran com a subdominis de la web principal (ex. `usuari.github.io/nom_repositori_secundari/`).
 
 ```{r fig3, fig.show="hold", out.height="20%", out.width="100%", fig.align = "center", fig.cap="Figura 3. Passos necessaris per a la creació d'un repositori de GitHub amb objectiu d'allotjar una web."}
-knitr::include_graphics(c("github_new_repo.png", 
-                          "github_new_repo2.png", 
-                          "github_new_repo3.png"))
+knitr::include_graphics(c("/images/github_new_repo.png", 
+                          "/images/github_new_repo2.png", 
+                          "/images/github_new_repo3.png"))
 ```
 
 
@@ -210,8 +210,8 @@ Ara que ja tenim el repositori, hem de fer carregar-hi tots els arxius necessari
 * Des del mateix repositori de GitHub (*Figura 4*), cliquem a *uploading an existing file*, despres arrosseguem els arxius de la carpeta generada al pas 2 i cliquem a *Commit changes* (si volem podem afegir una descripció o canviar el missatge del *commit*).
 
 ```{r fig4, fig.show="hold", out.width="100%", fig.align = "center", fig.cap="Figura 4. Com carregar els arxius a un repositori de GitHub."}
-knitr::include_graphics(c("github_upload_files1.png", 
-                          "github_upload_files2.png"))
+knitr::include_graphics(c("/images/github_upload_files1.png", 
+                          "/images/github_upload_files2.png"))
 ```
 
 
@@ -224,8 +224,8 @@ Una vegada haguem creat el repositori i hi tinguem els fitxers carregats, hem d'
 Finalment, haureu de clicar a *Save* (*Figura 5*), esperar una estona, actualitzar la pàgina i quan digui *Your site is published at ...*, ja podreu accedir a la vostra pàgina web personal.
 
 ```{r fig5, fig.show="hold", out.width="100%", fig.align = "center", fig.cap="Figura 5. Configurar el repositori de GitHub per allotjar una pàgina web."}
-knitr::include_graphics(c("github_pages1.png", 
-                          "github_pages2.png"))
+knitr::include_graphics(c("/images/github_pages1.png", 
+                          "/images/github_pages2.png"))
 ```
 
 ## Pas 8. Gaudir del vostre lloc web
