@@ -197,7 +197,7 @@ També podem crear tots els repositoris que volguem i amb qualsevol nom per allo
 ```{r fig3, fig.show="hold", out.height="20%", out.width="100%", fig.align = "center", fig.cap="Figura 3. Passos necessaris per a la creació d'un repositori de GitHub amb objectiu d'allotjar una web."}
 knitr::include_graphics(c("/images/github_new_repo.png", 
                           "/images/github_new_repo2.png", 
-                          "/images/github_new_repo3.png"))
+                          "/images/github_new_repo3.png"), error = F)
 ```
 
 
@@ -211,7 +211,7 @@ Ara que ja tenim el repositori, hem de fer carregar-hi tots els arxius necessari
 
 ```{r fig4, fig.show="hold", out.width="100%", fig.align = "center", fig.cap="Figura 4. Com carregar els arxius a un repositori de GitHub."}
 knitr::include_graphics(c("/images/github_upload_files1.png", 
-                          "/images/github_upload_files2.png"))
+                          "/images/github_upload_files2.png"), error = F)
 ```
 
 
@@ -225,7 +225,7 @@ Finalment, haureu de clicar a *Save* (*Figura 5*), esperar una estona, actualitz
 
 ```{r fig5, fig.show="hold", out.width="100%", fig.align = "center", fig.cap="Figura 5. Configurar el repositori de GitHub per allotjar una pàgina web."}
 knitr::include_graphics(c("/images/github_pages1.png", 
-                          "/images/github_pages2.png"))
+                          "/images/github_pages2.png"), error = F)
 ```
 
 ## Pas 8. Gaudir del vostre lloc web

@@ -1,0 +1,266 @@
+--- 
+title: "Com fer una pàgina web amb Rmarkdown i GitHub Pages"
+description: "Aprèn a fer una web i tenir un perfil públic més professional"
+tags:
+  - Web
+  - RMarkdown
+  - Github
+date: 2021-01-27
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<center>
+<strong><a href="https://amitjavilaventura.github.io" target="_blank">Adrià Mitjavila</a></strong> - <em>27 de març de 2021</em>
+</center>
+<p><br><br></p>
+<p><img src="/images/portada_web_rmarkdown.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><br><br></p>
+<p>R és un llenguatge de programació/<em>scripting</em> amb el qual es poden fer infinitat de coses: tractament i visualització de dades, anàlisis estadístiques, anàlisis de dades òmiques i altres tipus de dades biològiques (ep, això és interessant per a nosaltres, biotecnòlegs!) i, si ens endinsem a la fusió d’R amb <em>Markdown</em> (<em>Rmarkdown</em>) fins i tot <em>currículums vitae</em>, pàgines web i blogs.</p>
+<p>Doncs avui ens interessa publicar una pàgina web o blog propi mitjançant <em>Rmarkdown</em> i el que s’anomena <em>GitHub pages</em>. Sí, ja sabem que podem fer una pàgina web de manera més senzilla (o no) i amb una interfície gràfica més fàcil d’utilitzar mitjançant Wordpress o altres plataformes web, però sempre és útil saber com fer-ho des d’altres plataformes, ja sigui fent servir HTML, CSS i PHP o fent servir <em>Rmarkdown</em> per a crear arxius HTML de la nostra pàgina.</p>
+<p>A més, si utilitzem <em>Rmarkdown</em>, podrem publicar fragments de codi i anàlisis que fem en el nostre dia a dia i que ens pot interessar donar a conèixer a altres persones, cosa que és una mica menys senzill mitjançant plataformes que no siguin <em>Rmarkdown</em>. Per exemple, aquesta publicació està feta a partir d’un fitxer <em>Rmarkdown</em> i publicada a un lloc web que funciona amb Wordpress, però per a fer això, he hagut de copiar tot el codi HTML creat a partir del fitxer <em>.Rmd</em> i copiar-lo a una entrada del blog de Wordpress, mentre que amb GitHub pages hagués sigut tant senzill com una ordre al terminal del sistema o com carregar el fitxer sencer al repositori de GitHub on tinc tota la meva pàgina web.</p>
+<div id="requeriments" class="section level1">
+<h1>Requeriments</h1>
+<p>Primer de tot, cal recalcar que farà falta tenir determinats requeriments:</p>
+<ul>
+<li>Tenir <a href="https://www.r-project.org/">R</a> i <a href="https://rstudio.com/">RStudio</a> instal·lats.</li>
+<li>Tenir instal·lats tots els paquets d’R necessaris per a crear la nostra web.</li>
+<li>Tenir un compte de <a href="https://github.com/">GitHub</a>, de <a href="https://gitlab.com/">GitLab</a> o de <a href="https://bitbucket.org/">BitBucket</a>. Aquí ensenyarem com dur a terme el procés amb GitHub, però les altres dues opcions són igual de viables i la metodologia no canvia gaire.</li>
+<li>Conèixer a grans trets com funcionen RStudio i GitHub.</li>
+<li>Conèixer la <a href="https://rmarkdown.rstudio.com/lesson-1.html">sintaxi d’Rmarkdown</a>.</li>
+</ul>
+</div>
+<div id="web-o-blog" class="section level1">
+<h1>Web o blog?</h1>
+<p>Una de les coses que necessitarem decidir és si volem una web o un blog… però quina és la diferència entre aquestes dues coses?</p>
+<p>La diferència és senzilla:</p>
+<ul>
+<li>Un lloc web és un conjunt de pàgines dins un mateix domini a les quals podem accedir a través d’internet.</li>
+<li>Un blog és un lloc web on una d’aquestes pàgines serveix per llistar o enumerar una sèrie de publicacions.</li>
+</ul>
+<p>La majoria de pàgines web personals publicades a partir del mètode que explicarem aquí, així com aquelles publicades amb Wordpress i altres, consisteixen en blogs o tenen algun blog enllaçat, però no és estrictament necessari crear un blog si no tenim pensat fer publicacions de manera habitual.</p>
+</div>
+<div id="què-és-github" class="section level1">
+<h1>Què és GitHub?</h1>
+<p>Conèixer R i RStudio, així com la sintaxi d’Rmarkdown és una cosa que durem a terme en el nostre primer curs <em>Inicia’t a R</em>, un curs escrit íntegrament en català dedicat als socis de l’ASBTEC. Per tant, això ens ho saltarem i explicarem el que és GitHub i de què es tracta.</p>
+<p>GitHub és una plataforma per a l’emmagatzematge de codi que permet la col·laboració entre desenvolupadors i el que s’anomena control de versió, que no és res més que un conjunt d’eines de desenvolupament de <em>software</em> que ens ajuden a veure els canvis que hem dut a terme en un codi concret al llarg del temps.</p>
+<p>Per a fer-ho més simple, podríem dir que GitHub (així com les altres plataformes) és una mena de xarxa social on els usuaris creen repositoris de codi (el que serien les publicacions) que van actualitzant a mesura que milloren o canvien aquest codi.</p>
+<p>Per a crear un compte, simplement hem d’anar a <a href="https://github.com" class="uri">https://github.com</a> i clicar a <em>Sign up</em>, senzill oi? Una vegada tinguem el compte creat, podrem configurar el nostre perfil i crear els repositoris que volguem, mitjançant la icona <i class="fas fa-plus"></i> de dalt a la dreta.</p>
+<p>Nosaltres generarem tots els fitxers HTML mitjançant <em>Rmarkdown</em> i publicarem la nostra pàgina de manera gratuïta a GitHub pages mitjançant un repositori de nom especial (<code>usuari.github.io</code>), on <code>usuari</code> és el nom que li hem donat al nostre usuari de GitHub.</p>
+<p>Aquí teniu una guia ràpida de com utilitzar <a href="https://guides.github.com/activities/hello-world/">GitHub</a>.</p>
+</div>
+<div id="passos-a-seguir" class="section level1">
+<h1>Passos a seguir</h1>
+<p>Un cop tinguem R i RStudio instal·lats, els passos a seguir (dins d’RStudio) per a crear i publicar la nostra pàgina web són els següents:</p>
+<ol style="list-style-type: decimal">
+<li>Instal·lar totes les dependències (paquets) necessàries.</li>
+<li>Crear un projecte d’R mitjançant una plantilla (<em>template</em>) adient per a crear pàgines web.</li>
+<li>Generar tots els fitxers HTML que configuraran cada pàgina del nostre lloc web i generar els fitxers CSS (<em>opcional</em>) per donar format al nostre lloc web.</li>
+<li>Configurar l’organització del lloc web utilitzant, per exemple, un fitxer anomenat <code>_site.yaml</code>.</li>
+<li>Crear el compte de GitHub (si no el tenim) i el repositori <code>usuari.github.io</code>, el qual ha de ser públic.</li>
+<li>Carregar (fer <em>commit</em> i <em>push</em>) de tota la carpeta on tenim els fitxers de la pàgina web al repositori <code>usuari.github.io</code>.</li>
+<li>Configurar el repositori per a habilitar les <em>GitHub pages</em> i dir-li a GitHub on ha de buscar els documents HTML.</li>
+</ol>
+<div id="pas-1.-installar-les-dependències" class="section level2">
+<h2>Pas 1. Instal·lar les dependències</h2>
+<p>Els paquets que haurem d’instal·lar són paquets dedicats a la creació de pàgines web i blogs. D’aquests n’hi ha molts, encara que nosaltres ens basarem en el paquet <code>rmarkdown</code>:</p>
+<ul>
+<li><strong><code>rmarkdown</code></strong>: paquet senzill que ens aporta diverses utilitats del llenguatge <em>Rmarkdown</em> i que ens permet utilitzar una plantilla senzilla per a la creació de pàgines web (però no blogs). Podeu trobar més informació sobre aquest paquet a <a href="https://rmarkdown.rstudio.com/lesson-1.html" class="uri">https://rmarkdown.rstudio.com/lesson-1.html</a> i instal·lar-lo mitjançant l’ordre <code>install.packages("rmarkdown")</code>.</li>
+<li><strong><code>distill</code></strong>: paquet que ens permet utilitzar més plantilles per a fer una web o un blog, així com funcions que ens permetran crear publicacions i/o pàgines pel nostre lloc web de manera molt senzilla, ja que la seva estructura és molt similar a les webs creades amb el paquet <code>rmarkdown</code>, amb molts avantatges i alguns inconvenients. Podeu trobar més informació sobre aquest paquet a <a href="https://rstudio.github.io/distill/" class="uri">https://rstudio.github.io/distill/</a> i instal·lar-lo mitjançant l’ordre <code>install.packages("distill")</code>.</li>
+<li><strong><code>blogdown</code></strong>: paquet especialitzat en la creació de blogs, que ens permet tenir una flexibilitat a l’hora de configurar la nostra web i que disposa de diversos temes per a donar un format visual diferent al blog que crearem. És una mica més complicat d’utilitzar, però podeu trobar-ne més informació a <a href="https://bookdown.org/yihui/blogdown/" class="uri">https://bookdown.org/yihui/blogdown/</a> i instal·lar-lo mitjançant l’ordre <code>install.packages('blogdown')</code>.</li>
+</ul>
+<p><br>
+Altres paquets per a la creació de llocs web no personals (llibres, paquets d’R, projectes en general), els quals us seran més útils si us dediqueu a la (bio)informàtica, (bio)estadística, etc:</p>
+<ul>
+<li><strong><code>bookdown</code></strong>: aquest paquet està dissenyat per a la creació de llibres, però el format dels llibres també pot ser en línea com una pàgina web. Més informació a <a href="https://bookdown.org/yihui/bookdown/" class="uri">https://bookdown.org/yihui/bookdown/</a>.</li>
+<li><strong><code>pkgedown</code></strong>: paquet dissenyat per a la creació de llocs web destinats a la documentació de paquets. Més informació a <a href="https://pkgdown.r-lib.org/" class="uri">https://pkgdown.r-lib.org/</a>.</li>
+<li><strong><code>workflowr</code></strong>: paquet dissenyat per a la creació de llocs web (ja siguin locals o publicats a internet) destinats organitzar les anàlisis i les dades d’un projecte, així com facilitar la seva reproducibilitat i la col·laboració. Més informació a <a href="https://jdblischak.github.io/workflowr/" class="uri">https://jdblischak.github.io/workflowr/</a>.</li>
+</ul>
+<p><br>
+Les altres dependències dependran del codi que volguem executar a les nostres pàgines o publicacions del lloc web. A continuació teniu alguns paquets útils, encara que no els explicarem:</p>
+<ul>
+<li><code>knitr</code>: paquet amb funcions que ens permetran incloure imatges (ex. <code>include_graphics()</code>), donar format de taula a matrius o <em>data frames</em> (ex. <code>kable()</code>), entre moltes altres, quelcom interessant a l’hora de fer CVs, etc. Més informació <a href="https://yihui.org/knitr/">aquí</a>.</li>
+<li><code>tidyverse</code>: conjunt de paquets que fan molt senzills el tractament i modificació d’estructures de dades (matrius, <em>data frames</em>, mitjançant el paquet <code>dplyr</code>) així com la visualització de gràfics (mitjançant <code>ggplot2</code>), etc.</li>
+<li>…</li>
+</ul>
+</div>
+<div id="pas-2.-crear-un-projecte-dr" class="section level2">
+<h2>Pas 2. Crear un projecte d’R</h2>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="/images/newRproject.png" alt="Figura 1. Passos necessaris per a crear un projecte d'R." width="49%" height="20%" /><img src="/images/newRproject_directory.png" alt="Figura 1. Passos necessaris per a crear un projecte d'R." width="49%" height="20%" /><img src="/images/newRproject_type.png" alt="Figura 1. Passos necessaris per a crear un projecte d'R." width="49%" height="20%" /><img src="/images/newRproject_name.png" alt="Figura 1. Passos necessaris per a crear un projecte d'R." width="49%" height="20%" />
+<p class="caption">
+Figure 1: Figura 1. Passos necessaris per a crear un projecte d’R.
+</p>
+</div>
+<p>Una vegada tinguem les dependències instal·lades (bàsicament el paquet <code>rmarkdown</code> o el que desitgem), crearem un projecte d’R seguint els següents passos:</p>
+<ol style="list-style-type: decimal">
+<li>Anem a la icona de dalt a la dreta i cliquem a <em>New Project…</em> (Figura 1, panell superior esquerra).</li>
+<li>A finestra que se’ns obra a continuació (Figura 1, panell superior dret), indiquem <em>New Directory</em>, si volem crear el projecte en una nova carpeta (aconsellable), o <em>Existing Directory</em>, si volem crear el projecte a un directori ja existent (millor si està buit).</li>
+<li>Seguidament se’ns obra una nova finestra (Figura 1, panell inferior esquerra) on hem d’indicar el tipus de projecte que volem. El més senzill és indicar <em>Simple R Markdown Website</em> (que és el que explicarem), encara que si volem fer un blog amb <code>distill</code> podem clicar a <em>Distill Blog</em> i si volem utilitzar <code>blogdown</code> podem clicar <em>Website using blogdown</em>.</li>
+<li>Finalment, a la següent finestra (Figura 1, panell inferior dret), hem d’indicar el directori on volem crear el nostre projecte i clicar a <em>Create Project</em>.</li>
+</ol>
+<p>Un cop haguem fet això es crearà la carpeta corresponent al nostre projecte juntament amb diversos fitxers:</p>
+<ul>
+<li><code>_site.yml</code>: arxiu que ens permetrà l’organització dels fitxers generats per a la nostra web. És obligatori disposar d’aquest arxiu.</li>
+<li><code>index.Rmd</code>: arxiu <code>.Rmd</code> que ens servirà per a crear l’arxiu <code>index.html</code> que serà la pàgina inicial (<em>Home</em>) del nostre lloc web. És obligatori disposar d’aquest arxiu.</li>
+<li><code>about.Rmd</code>: arxiu <code>.Rmd</code> que ens servirà per a crear l’arxiu <code>index.html</code> que, per defecte és la pàgina <em>About</em> del nostre lloc web. Aquest arxiu no és obligatori, ja que depèn només ens serveix per a crear una pàgina extra al nostra lloc web.</li>
+</ul>
+</div>
+<div id="pas-3.-generar-els-fitxers-html" class="section level2">
+<h2>Pas 3. Generar els fitxers HTML</h2>
+<p>Per a generar els fitxers HTML que configuraran les pàgines del lloc web podem fer-ho de diverses maneres.</p>
+<ul>
+<li><p>Escriure els fitxers HTML directament, cosa que no és recomanable pels que no dominen aquest llenguatge i que és força tediosa.</p></li>
+<li><p>Crear documents <em>R Markdown</em> i renderitzar-los a HTML. Aquesta és l’opció més senzilla i en la que ens centrarem:</p>
+<ul>
+<li>Un cop tinguem tots els fitxers <em>R Markdown</em> creats i el fitxer <code>_site.yml</code> configurat, per a construir la pàgina podem anar a la pestanya <em>Build</em> de dalt a la dreta i clicar a <em>Build Website</em> (Figura 2).</li>
+<li>Podem crear tants fitxers <em>R Markdown</em> com volguem i renderitzar-los a HTML, però per a què apareixin a la pàgina web hem de posar-los al fitxer <code>_site.yml</code> (exepte l’<code>index.html</code>, que serà la pàgina inicial del nostre lloc web encara que no el posem explicitament).</li>
+<li>Als fitxers <em>R Markdown</em>, normalment hi tenim una <em>capçalera YAML</em> (al principi del document entre dos blocs de tres guions <code>---</code>), amb diverses opcions. En aquest cas només cal indicar el <code>title</code>, ja que les opcions com <code>output</code>… les indicarem al fitxer <code>_site.yml</code>.</li>
+</ul></li>
+</ul>
+<div class="figure">
+<img src="/images/rstudio_screen.png" alt="Figura 2. Pantalla d'RStudio on es mostra el fitxer '_site.yml' de la web de prova a l'editor (panell superior esquerra), la pestanya 'Build' (panell superior dret) i la distribució del directori on tindrem guardat el lloc web (panell inferior dret)." width="100%" />
+<p class="caption">
+(#fig:rstudio_screen)Figura 2. Pantalla d’RStudio on es mostra el fitxer ’_site.yml’ de la web de prova a l’editor (panell superior esquerra), la pestanya ‘Build’ (panell superior dret) i la distribució del directori on tindrem guardat el lloc web (panell inferior dret).
+</p>
+</div>
+</div>
+<div id="pas-4.-configurar-el-fitxer-_site.yml" class="section level2">
+<h2>Pas 4. Configurar el fitxer <code>_site.yml</code></h2>
+<p>Com hem vist al pas 2, al crear el projecte s’ha generat un fitxer <code>_site.yml</code> que ens servirà per organitzar les pàgines del lloc web. Aquest és el codi del fitxer creat per defecte:</p>
+<pre><code>name: &quot;my-website&quot;
+navbar:
+  title: &quot;My Website&quot;
+  left:
+    - text: &quot;Home&quot;
+      href: index.html
+    - text: &quot;About&quot;
+      href: about.html</code></pre>
+<p>En aquest exemple trobem diversos paràmetres:</p>
+<ul>
+<li><code>name:</code> nom de la web</li>
+<li><code>output_dir:</code> aquesta opció no apareix al fitxer <code>_site.yml</code> que tenim per defecte, però és important especificar-la i posar <code>"docs"</code> (els fitxers HTML es crearan ) o <code>"."</code><br />
+</li>
+<li><code>navbar:</code> barra de navegació superior
+<ul>
+<li><code>title:</code> títol que apareix a la barra de navegació</li>
+<li><code>left:</code> enllaços o menús que apareixeran a la part esquerra de la pantalla.
+<ul>
+<li><code>text:</code> text dels enllaços</li>
+<li><code>href:</code> nom del fitxer HTML de la pàgina que volem posar.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Ara bé, com veieu a la <strong>figura 2</strong>, la qual mostra una <a href="https://asbtec.github.io/prova-web-rmarkdown/index.html">pàgina de prova</a>, hi ha moltes més opcions per especificar:</p>
+<ul>
+<li><p>Dins de <code>navbar:</code></p>
+<ul>
+<li><p><code>type:</code> (<em>opcional</em>) si indiquem <code>inverse</code> canvia els colors del tema del lloc web. Si no ho volem així, no cal especificar-la.</p></li>
+<li><p><code>right:</code> enllaços i menús que ens apareixeran a la part dreta de la barra de navegació.</p></li>
+<li><p>Dins de <code>right</code> o <code>left:</code></p>
+<ul>
+<li>Cada nova pestanya ha d’anar acompanyada d’un guió <code>-</code>.</li>
+<li><code>text:</code> text que apareixerà a la pestanya de la barra de navegació.</li>
+<li><code>icon:</code> icona que apareixerà juntament amb el text de la pestanya. No pot ser qualsevol imatge, sinó que hem d’utilitzar les icones de <a href="https://fontawesome.com/icons?d=gallery"><em>Font Awesome</em></a> indicant <code>fa-nom_de_la_icona</code>.</li>
+<li><code>href:</code> URL o ruta al fitxer que volem enllaçar a la pestanya.</li>
+<li><code>menu:</code> si volem que la pestanya sigui un menú desplegable, hem d’indicar aquesta opció, i a dins (amb una tabulació, indicarem <code>text</code>, <code>href</code>…)</li>
+</ul></li>
+</ul></li>
+<li><p><code>output:</code> format dels fitxers que volem que es creein a partir dels <em>R Markdown</em>. En aquesta opció s’hi pot especificar el mateix que a la capçalera dels fitxers <em>R Markdown</em>. Dins d’<code>output</code> hi podem posar més opcions:</p>
+<ul>
+<li><p><code>html_document:</code> indiquem que el fitxer que volem és HTML. Dins d’aquesta opció:</p>
+<ul>
+<li><code>theme:</code> tema que volem utilitxar per a la nostra pàgina web. Alguns exemples de temes són: <em>cerulean</em>, <em>cosmo</em>, <em>yeti</em>, <em>darkly</em>, <em>paper</em>, <em>journal</em>, etc.</li>
+<li>Hi ha moltes més opcions a afegir tant aquí com a la capçalera dels <em>R Markdown</em> (ex. <code>highlight</code>, <code>toc</code>, <code>toc_float</code>, <code>code_folding</code>), <a href="https://bookdown.org/yihui/rmarkdown/html-document.html">aquí</a> podem trobear-ne algunes.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Ara ja tenim tot el que necessitem per fer la web i, si cliquem <em>Build Website</em>, podrem visualitzar-la de manera local.</p>
+</div>
+<div id="pas-5.-crear-el-repositori-de-github" class="section level2">
+<h2>Pas 5. Crear el repositori de GitHub</h2>
+<p>Si no tenim un compte a GitHub, haurem d’anar <a href="https://github.com" class="uri">https://github.com</a> i crear un compte seguint les instruccions. Una vegada haguem creat el compte, ja podrem crear tots els repositoris que volguem per a guardar codi. Aquí en teniu una petita <a href="https://guides.github.com/activities/hello-world/">guia</a>, la qual us hem deixat al principi d’aquesta mateixa publicació.</p>
+<p>Per a guardar la vostra web, el que haureu de fer és crear un repositori amb el nom <code>usuari.github.io</code>. Per exemple, el meu usuari de GitHub és <a href="https://github.com/amitjavilaventura"><em>amitjavilaventura</em></a>, per tant, el repositori que he de crear per a guardar la meva web és <a href="https://github.com/amitjavilaventura/amitjavilaventura.github.io"><code>amitjavilaventura.github.io</code></a>, que serà el domini que es farà servir per allotjar el lloc web (<em>Figura 3</em>).</p>
+<p>També podem crear tots els repositoris que volguem i amb qualsevol nom per allotjar tantes webs com volguem, però aquestes webs s’allotjaran com a subdominis de la web principal (ex. <code>usuari.github.io/nom_repositori_secundari/</code>).</p>
+<div class="figure" style="text-align: center"><span id="fig:fig3"></span>
+<img src="/images/github_new_repo.png" alt="Figura 3. Passos necessaris per a la creació d'un repositori de GitHub amb objectiu d'allotjar una web." width="100%" height="20%" /><img src="/images/github_new_repo2.png" alt="Figura 3. Passos necessaris per a la creació d'un repositori de GitHub amb objectiu d'allotjar una web." width="100%" height="20%" /><img src="/images/github_new_repo3.png" alt="Figura 3. Passos necessaris per a la creació d'un repositori de GitHub amb objectiu d'allotjar una web." width="100%" height="20%" />
+<p class="caption">
+Figure 2: Figura 3. Passos necessaris per a la creació d’un repositori de GitHub amb objectiu d’allotjar una web.
+</p>
+</div>
+</div>
+<div id="pas-6.-carregar-tots-els-fitxers-al-repositori" class="section level2">
+<h2>Pas 6. Carregar tots els fitxers al repositori</h2>
+<p>Ara que ja tenim el repositori, hem de fer carregar-hi tots els arxius necessaris. Això ho podem fer mitjançant tres mètodes:</p>
+<ul>
+<li>Des de la terminal del sistema (s’hi pot accedir des d’RStudio), una opció fàcil i ràpida una vegada la domines, però complicada d’entendre al principi.</li>
+<li>Des de l’aplicació de <em>GitHub Desktop</em>, una opció més assequible, però encara n’hi ha una de més fàcil.</li>
+<li>Des del mateix repositori de GitHub (<em>Figura 4</em>), cliquem a <em>uploading an existing file</em>, despres arrosseguem els arxius de la carpeta generada al pas 2 i cliquem a <em>Commit changes</em> (si volem podem afegir una descripció o canviar el missatge del <em>commit</em>).</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:fig4"></span>
+<img src="/images/github_upload_files1.png" alt="Figura 4. Com carregar els arxius a un repositori de GitHub." width="100%" /><img src="/images/github_upload_files2.png" alt="Figura 4. Com carregar els arxius a un repositori de GitHub." width="100%" />
+<p class="caption">
+Figure 3: Figura 4. Com carregar els arxius a un repositori de GitHub.
+</p>
+</div>
+<p>Recordeu que teniu la <a href="https://guides.github.com/activities/hello-world/">guia</a> que us hem proporcionat al principi i que us pot servir de molta ajuda.</p>
+</div>
+<div id="pas-7.-configurar" class="section level2">
+<h2>Pas 7. Configurar</h2>
+<p>Una vegada haguem creat el repositori i hi tinguem els fitxers carregats, hem d’anar a la pestanya <i class="fas fa-cog"></i> <em>Settings</em> (<em>Figura 5, panell superior</em>) i dins d’aquesta pestanya a la secció on diu <em>GitHub Pages</em> (<em>Figura 5, panell inferior</em>) hem d’indicar la <em>Branch</em> del repositori (vosaltres en tindreu només una, que probablement es digui <em>master</em> o <em>main</em>) i la carpeta on buscar els fitxers HTML, que serà <em>docs</em> o <em>root</em> depenent el que hagiu posat a l’opció <code>output_dir</code> del fitxer <code>_site.yml</code>.</p>
+<p>Finalment, haureu de clicar a <em>Save</em> (<em>Figura 5</em>), esperar una estona, actualitzar la pàgina i quan digui <em>Your site is published at …</em>, ja podreu accedir a la vostra pàgina web personal.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig5"></span>
+<img src="/images/github_pages1.png" alt="Figura 5. Configurar el repositori de GitHub per allotjar una pàgina web." width="100%" /><img src="/images/github_pages2.png" alt="Figura 5. Configurar el repositori de GitHub per allotjar una pàgina web." width="100%" />
+<p class="caption">
+Figure 4: Figura 5. Configurar el repositori de GitHub per allotjar una pàgina web.
+</p>
+</div>
+</div>
+<div id="pas-8.-gaudir-del-vostre-lloc-web" class="section level2">
+<h2>Pas 8. Gaudir del vostre lloc web</h2>
+<p>A més, si teniu un domini particular, podeu indicar que voleu que el vostre lloc web s’allotji en aquest domini i no a <code>usuari.github.io</code>.</p>
+<p>Ara ja podeu del vostre lloc web i podeu anar-lo actualitzant.</p>
+</div>
+</div>
+<div id="recursos" class="section level1">
+<h1>Recursos</h1>
+<p>A continuació us deixem alguns recursos, a més dels que ja hem anat donant al llarg de la publicació:</p>
+<ul>
+<li><p><em>R Markdown</em></p>
+<ul>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.208411222.519933327.1611688102-172412930.1604399930">Guia de referència</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf"><em>Cheat sheet</em></a></li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">Introducció</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">Llibre</a></li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/websites.html">Llocs web (capítol 10 del llibre)</a></li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>Paquets d’R per a fer webs:</p>
+<ul>
+<li><a href="https://rstudio.github.io/distill/"><code>distill</code></a></li>
+<li><a href="https://bookdown.org/yihui/blogdown/"><code>blogdown</code></a></li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>GitHub:</p>
+<ul>
+<li><a href="https://guides.github.com/activities/hello-world/">Guia ràpida</a></li>
+<li><a href="https://docs.github.com/en/github/getting-started-with-github"><em>Getting started</em></a></li>
+<li><a href="https://pages.github.com/"><em>GitHub Pages</em></a></li>
+<li><a href="https://docs.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site"><em>Domini propi</em></a></li>
+<li><a href="https://docs.github.com/en/github/working-with-github-pages/creating-a-github-pages-site"><em>Creating a GitHub Pages site</em></a></li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li><p>Exemples:</p>
+<ul>
+<li><a href="https://asbtec.github.io/prova-web-rmarkdown/index.html">Lloc web de prova</a></li>
+<li><a href="https://github.com/ASBTEC/prova-web-rmarkdown">Repositori del lloc web</a></li>
+</ul></li>
+</ul>
+</div>
